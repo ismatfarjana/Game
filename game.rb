@@ -4,8 +4,8 @@ class Game
     @rounds = rounds
   end
 
-  def round_finished?
-    rounds == 0 
+  def round_left?
+    rounds != 0 
   end
 
   def next_round
@@ -14,6 +14,6 @@ class Game
 end
 
 # game = Game.new(round: round)
-# game.round_finished? will return true if no round left
-# game.round_finished? will return false if round left
+# game.round_left? will return false if no round left
+# game.round_left? will return true if round left
 # game.next_round will reduce round count 

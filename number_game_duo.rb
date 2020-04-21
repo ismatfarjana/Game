@@ -1,19 +1,12 @@
-require_relative 'game.rb'
+require_relative 'game'
+require_relative 'operator'
 
 rounds = ARGV.first.to_i
 ARGV.clear
 game = Game.new(rounds: rounds)
+operator = Operator.new(game: game)
+
 
 p "welcome"
 
-def result
-  p "guess a number between 1 to 10"
-  input = gets.chomp.to_i
-  compus_guess = rand(10)
-  p "Your guess: #{input} computrons guess: #{compus_guess} "
-  input == compus_guess ? (p "It is a Draw!") : 
-  (input < compus_guess ? (p "Computron wins!" ): (p "You win"))
-end 
-
-
-result
+operator.new_round

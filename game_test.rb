@@ -10,12 +10,12 @@ class GameTest < Minitest::Test
     assert_equal 3, game.rounds 
   end
 
-   def test_round_finished?
+   def test_round_left?
     game = Game.new(rounds: 3)
-    assert_equal false, game.round_finished?
+    assert_equal true, game.round_left?
     
     game1 = Game.new(rounds: 0)
-    assert_equal true, game1.round_finished?
+    assert_equal false, game1.round_left?
    end
 
    def test_next_round
